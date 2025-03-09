@@ -10,6 +10,7 @@
     </parent>
 
     <artifactId>web</artifactId>
+    <groupId>gob.yucatan.web</groupId>
     <version>0.0.1-SNAPSHOT</version>
     <name>web</name>
     <description>web</description>
@@ -21,6 +22,21 @@
     </properties>
 
     <dependencies>
+        <dependency>
+            <groupId>gob.yucatan.core</groupId>
+            <artifactId>core</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>gob.yucatan.utilities</groupId>
+            <artifactId>utilities</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>gob.yucatan.security</groupId>
+            <artifactId>security</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
         <dependency>
             <groupId>org.springframework.session</groupId>
             <artifactId>spring-session-core</artifactId>

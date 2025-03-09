@@ -10,6 +10,8 @@
     </parent>
 
     <artifactId>security</artifactId>
+    <groupId>gob.yucatan.security</groupId>
+    <version>0.0.1-SNAPSHOT</version>
     <description>Módulo de seguridad del proyecto</description>
 
     <properties>
@@ -17,5 +19,26 @@
         <maven.compiler.target>21</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>gob.yucatan.utilities</groupId>
+            <artifactId>utilities</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
+    </dependencies>
+
+    <!-- Utilizar si el módulo no tiene una clase Main, ayuda a que no marque error al usar clean install -->
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <skip>true</skip>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 
 </project>
