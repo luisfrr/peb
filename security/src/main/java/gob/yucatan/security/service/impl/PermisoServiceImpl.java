@@ -1,6 +1,7 @@
 package gob.yucatan.security.service.impl;
 
 import gob.yucatan.security.entity.Permiso;
+import gob.yucatan.security.entity.Permiso_;
 import gob.yucatan.security.repository.IPermisoRepository;
 import gob.yucatan.security.service.iface.IPermisoService;
 import gob.yucatan.utilities.specification.CustomSpecification;
@@ -24,11 +25,11 @@ public class PermisoServiceImpl implements IPermisoService {
     public List<Permiso> findAllDynamic(Permiso permiso) {
         EntitySpecification<Permiso> specification = new EntitySpecification<>();
 
-//        if(permiso.getNombre() != null && !permiso.getNombre().isEmpty()){
-//            specification.add(new CustomSpecification(FilterOperation.MATCH,
-//                    permiso.getNombre(),
-//                    Permiso_.NOMBRE));
-//        }
+        if(permiso.getNombre() != null && !permiso.getNombre().isEmpty()){
+            specification.add(new CustomSpecification(FilterOperation.MATCH,
+                    permiso.getNombre(),
+                    Permiso_.NOMBRE));
+        }
 
         return permisoRepository.findAll(specification);
     }

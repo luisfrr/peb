@@ -1,8 +1,6 @@
 package gob.yucatan.security.service.impl;
 
-import gob.yucatan.security.entity.Permiso;
-import gob.yucatan.security.entity.Rol;
-import gob.yucatan.security.entity.RolPermiso;
+import gob.yucatan.security.entity.*;
 import gob.yucatan.security.enums.EstatusPermiso;
 import gob.yucatan.security.repository.IRolPermisoRepository;
 import gob.yucatan.security.service.iface.IPermisoService;
@@ -31,20 +29,20 @@ public class RolPermisoServiceImpl implements IRolPermisoService {
 
         EntitySpecification<RolPermiso> specification = new EntitySpecification<>();
 
-//        if(rolPermiso.getRol() != null && rolPermiso.getRol().getIdRol() != null)
-//            specification.add(new CustomSpecification(FilterOperation.EQUAL,
-//                    rolPermiso.getRol().getIdRol(),
-//                    RolPermiso_.ROL, Rol_.ID_ROL));
-//
-//        if(rolPermiso.getPermisoParentId() != null)
-//            specification.add(new CustomSpecification(FilterOperation.EQUAL,
-//                    rolPermiso.getPermisoParentId(),
-//                    RolPermiso_.PERMISO, Permiso_.PERMISO_PARENT, Permiso_.ID_PERMISO));
-//
-//        if(rolPermiso.getEstatusPermiso() != null)
-//            specification.add(new CustomSpecification(FilterOperation.EQUAL,
-//                    rolPermiso.getEstatusPermiso(),
-//                    RolPermiso_.ESTATUS_PERMISO));
+        if(rolPermiso.getRol() != null && rolPermiso.getRol().getIdRol() != null)
+            specification.add(new CustomSpecification(FilterOperation.EQUAL,
+                    rolPermiso.getRol().getIdRol(),
+                    RolPermiso_.ROL, Rol_.ID_ROL));
+
+        if(rolPermiso.getPermisoParentId() != null)
+            specification.add(new CustomSpecification(FilterOperation.EQUAL,
+                    rolPermiso.getPermisoParentId(),
+                    RolPermiso_.PERMISO, Permiso_.PERMISO_PARENT, Permiso_.ID_PERMISO));
+
+        if(rolPermiso.getEstatusPermiso() != null)
+            specification.add(new CustomSpecification(FilterOperation.EQUAL,
+                    rolPermiso.getEstatusPermiso(),
+                    RolPermiso_.ESTATUS_PERMISO));
 
         return rolPermisoRepository.findAll(specification);
     }

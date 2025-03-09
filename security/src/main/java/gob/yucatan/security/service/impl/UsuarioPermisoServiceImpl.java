@@ -35,20 +35,20 @@ public class UsuarioPermisoServiceImpl implements IUsuarioPermisoService {
 
         EntitySpecification<UsuarioPermiso> specification = new EntitySpecification<>();
 
-//        if(usuarioPermiso.getUsuario() != null && usuarioPermiso.getUsuario().getIdUsuario() != null)
-//            specification.add(new CustomSpecification(FilterOperation.EQUAL,
-//                    usuarioPermiso.getUsuario().getIdUsuario(),
-//                    UsuarioPermiso_.USUARIO, Usuario_.ID_USUARIO));
-//
-//        if(usuarioPermiso.getPermisoParentId() != null)
-//            specification.add(new CustomSpecification(FilterOperation.EQUAL,
-//                    usuarioPermiso.getPermisoParentId(),
-//                    UsuarioPermiso_.PERMISO, Permiso_.PERMISO_PARENT, Permiso_.ID_PERMISO));
-//
-//        if(usuarioPermiso.getEstatusPermiso() != null)
-//            specification.add(new CustomSpecification(FilterOperation.EQUAL,
-//                    usuarioPermiso.getEstatusPermiso(),
-//                    UsuarioPermiso_.ESTATUS_PERMISO));
+        if(usuarioPermiso.getUsuario() != null && usuarioPermiso.getUsuario().getIdUsuario() != null)
+            specification.add(new CustomSpecification(FilterOperation.EQUAL,
+                    usuarioPermiso.getUsuario().getIdUsuario(),
+                    UsuarioPermiso_.USUARIO, Usuario_.ID_USUARIO));
+
+        if(usuarioPermiso.getPermisoParentId() != null)
+            specification.add(new CustomSpecification(FilterOperation.EQUAL,
+                    usuarioPermiso.getPermisoParentId(),
+                    UsuarioPermiso_.PERMISO, Permiso_.PERMISO_PARENT, Permiso_.ID_PERMISO));
+
+        if(usuarioPermiso.getEstatusPermiso() != null)
+            specification.add(new CustomSpecification(FilterOperation.EQUAL,
+                    usuarioPermiso.getEstatusPermiso(),
+                    UsuarioPermiso_.ESTATUS_PERMISO));
 
         return usuarioPermisoRepository.findAll(specification);
     }

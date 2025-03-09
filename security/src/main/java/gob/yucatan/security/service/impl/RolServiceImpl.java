@@ -1,6 +1,7 @@
 package gob.yucatan.security.service.impl;
 
 import gob.yucatan.security.entity.Rol;
+import gob.yucatan.security.entity.Rol_;
 import gob.yucatan.security.repository.IRolRepository;
 import gob.yucatan.security.service.iface.IRolService;
 import gob.yucatan.utilities.exception.BadRequestException;
@@ -33,19 +34,14 @@ public class RolServiceImpl implements IRolService {
     public List<Rol> findAllDynamic(Rol rol) {
         EntitySpecification<Rol> specification = new EntitySpecification<>();
 
-//        if(rol.getNombre() != null && !rol.getNombre().isEmpty())
-//            specification.add(new CustomSpecification(FilterOperation.MATCH,
-//                    rol.getNombre(),
-//                    Rol_.NOMBRE));
-//
-//        if(rol.getEstatus() != null)
-//            specification.add(new CustomSpecification(FilterOperation.EQUAL,
-//                    rol.getEstatus(),
-//                    Rol_.ESTATUS));
-//
-//        if(rol.isLeftJoinUsuarioRolSet())
-//            specification.add(new CustomFetch(JoinType.LEFT,
-//                    Rol_.USUARIO_ROL_SET));
+        if(rol.getNombre() != null && !rol.getNombre().isEmpty())
+            specification.add(new CustomSpecification(FilterOperation.MATCH,
+                    rol.getNombre(),
+                    Rol_.NOMBRE));
+
+        if(rol.isLeftJoinUsuarioRolSet())
+            specification.add(new CustomFetch(JoinType.LEFT,
+                    Rol_.USUARIO_ROL_SET));
 
         return rolRepository.findAll(specification);
     }

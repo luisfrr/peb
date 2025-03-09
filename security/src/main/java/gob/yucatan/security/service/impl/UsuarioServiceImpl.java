@@ -1,13 +1,10 @@
 package gob.yucatan.security.service.impl;
 
-import gob.yucatan.security.entity.Rol;
-import gob.yucatan.security.entity.Usuario;
-import gob.yucatan.security.entity.UsuarioRol;
+import gob.yucatan.security.entity.*;
 import gob.yucatan.security.repository.IRolRepository;
 import gob.yucatan.security.repository.IUsuarioRepository;
 import gob.yucatan.security.repository.IUsuarioRolRepository;
 import gob.yucatan.security.service.iface.IUsuarioService;
-import gob.yucatan.utilities.exception.BadRequestException;
 import gob.yucatan.utilities.exception.NotFoundException;
 import gob.yucatan.utilities.specification.CustomSpecification;
 import gob.yucatan.utilities.specification.EntitySpecification;
@@ -36,35 +33,30 @@ public class UsuarioServiceImpl implements IUsuarioService {
     public List<Usuario> findAllDynamic(Usuario usuario) {
         EntitySpecification<Usuario> specification = new EntitySpecification<>();
 
-//        if(usuario.getUsuario() != null && !usuario.getUsuario().isEmpty())
-//            specification.add(new CustomSpecification(FilterOperation.MATCH,
-//                    usuario.getUsuario(),
-//                    Usuario_.USUARIO));
-//
-//        if(usuario.getNombre() != null && !usuario.getNombre().isEmpty())
-//            specification.add(new CustomSpecification(FilterOperation.MATCH,
-//                    usuario.getNombre(),
-//                    Usuario_.NOMBRE));
-//
-//        if(usuario.getEmail() != null && !usuario.getEmail().isEmpty())
-//            specification.add(new CustomSpecification(FilterOperation.MATCH,
-//                    usuario.getEmail(),
-//                    Usuario_.EMAIL));
-//
-//        if(usuario.getIdRolList() != null && !usuario.getIdRolList().isEmpty())
-//            specification.add(new CustomSpecification(FilterOperation.IN,
-//                    usuario.getIdRolList(),
-//                    Usuario_.USUARIO_ROL_SET, UsuarioRol_.ROL, Rol_.ID_ROL));
-//
-//        if(usuario.getEstatus() != null)
-//            specification.add(new CustomSpecification(FilterOperation.EQUAL,
-//                    usuario.getEstatus(),
-//                    Usuario_.ESTATUS));
+        if(usuario.getUsuario() != null && !usuario.getUsuario().isEmpty())
+            specification.add(new CustomSpecification(FilterOperation.MATCH,
+                    usuario.getUsuario(),
+                    Usuario_.USUARIO));
 
-//        if(!usuario.isRolOwner())
-//            specification.add(new CustomSpecification(FilterOperation.NOT_EQUAL,
-//                    EstatusUsuario.BORRADO,
-//                    Usuario_.ESTATUS));
+        if(usuario.getNombre() != null && !usuario.getNombre().isEmpty())
+            specification.add(new CustomSpecification(FilterOperation.MATCH,
+                    usuario.getNombre(),
+                    Usuario_.NOMBRE));
+
+        if(usuario.getEmail() != null && !usuario.getEmail().isEmpty())
+            specification.add(new CustomSpecification(FilterOperation.MATCH,
+                    usuario.getEmail(),
+                    Usuario_.EMAIL));
+
+        if(usuario.getIdRolList() != null && !usuario.getIdRolList().isEmpty())
+            specification.add(new CustomSpecification(FilterOperation.IN,
+                    usuario.getIdRolList(),
+                    Usuario_.USUARIO_ROL_SET, UsuarioRol_.ROL, Rol_.ID_ROL));
+
+        if(usuario.getEstatus() != null)
+            specification.add(new CustomSpecification(FilterOperation.EQUAL,
+                    usuario.getEstatus(),
+                    Usuario_.ESTATUS));
 
         return usuarioRepository.findAll(specification);
     }
