@@ -1,0 +1,21 @@
+<ui:composition template="../WEB-INF/facelets/main_layout.xhtml"
+                xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="jakarta.faces.facelets"
+                xmlns:p="http://primefaces.org/ui">
+
+<ui:define name="title">
+    #{homeView.title}
+</ui:define>
+
+<ui:define name="content">
+
+    <p:outputPanel styleClass="container-fluid">
+        <h3 class="mb-5">¡Hola #{userSessionBean.fullName}!</h3>
+
+        <p:growl id="growl" showDetail="true" showSummary="true" skipDetailIfEqualsSummary="true" globalOnly="true"/>
+
+    </p:outputPanel>
+
+</ui:define>
+
+</ui:composition>

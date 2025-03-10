@@ -1,0 +1,61 @@
+<ui:composition template="WEB-INF/facelets/login_layout.xhtml"
+                xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="jakarta.faces.html"
+                xmlns:ui="jakarta.faces.facelets"
+                xmlns:p="http://primefaces.org/ui">
+
+<ui:define name="title">
+    #{loginView.title}
+</ui:define>
+
+<ui:define name="content">
+
+    <script>
+        function callbackCaptcha(response) {
+            // Aquí puedes realizar cualquier lógica adicional que necesites
+            const captchaValid = (response !== null);
+            if(captchaValid) {
+                PF('btnLogin').enable();
+            }
+        }
+    </script>
+
+    <p:outputPanel styleClass="card card-login m-4">
+
+        <h5 class="text-center uppercase m-0">#{appBean.appName}</h5>
+
+        <p class="text-center font-light">Inicia sesión para continuar...</p>
+
+        <h:form styleClass="w-full flex flex-column gap-4 justify-content-center"
+                prependId="false">
+            <p:inputText placeholder="Usuario" id="username" styleClass="w-full" required="true"
+                         onkeyup="Validator.validateInputTextUsername(this);"/>
+            <p:outputPanel styleClass="mb-4 w-full">
+                <p:password placeholder="Contraseña" id="password" redisplay="true" toggleMask="true"
+                            styleClass="w-full" required="true"/>
+            </p:outputPanel>
+
+            <p:captcha required="true" theme="light" language="es"
+                       value="#{loginView.captcha}" callback="callbackCaptcha"
+                       valueChangeListener="#{loginView.onChangeCaptcha()}"/>
+
+            <div class="flex justify-content-center mt-4">
+                <p:commandButton id="btnLogin" widgetVar="btnLogin" value="Continuar"
+                                 ajax="false" validateClient="true"
+                                 disabled="#{not loginView.captcha}"/>
+            </div>
+
+        </h:form>
+
+        <h:form prependId="true">
+            <p:link href="#{appBean.contextPath}/views/auth/forgotpassword.faces"
+                    styleClass="text-sm text-secondary-color font-light text-center">
+                ¿Olvidó su contraseña?
+            </p:link>
+        </h:form>
+
+    </p:outputPanel>
+
+</ui:define>
+
+</ui:composition>

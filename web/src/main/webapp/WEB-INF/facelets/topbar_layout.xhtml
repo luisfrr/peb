@@ -1,0 +1,46 @@
+<ui:composition
+        xmlns="http://www.w3.org/1999/xhtml"
+        xmlns:h="jakarta.faces.html"
+        xmlns:ui="jakarta.faces.facelets"
+        xmlns:p="http://primefaces.org/ui">
+
+    <header class="topbar">
+
+        <div class="topbar-left">
+            <div class="brand">
+                <h:form>
+                    <p:commandLink ajax="false" action="#{menuSessionBean.goToHome()}">
+                        <h6 class="app-name uppercase">#{appBean.appName}</h6>
+                    </p:commandLink>
+                </h:form>
+            </div>
+            <span id="button-menu" class="header-link">
+                <i id="button-menu-icon" class="fi fi-rr-menu-burger"/>
+            </span>
+        </div>
+
+        <div class="topbar-right">
+
+            <a class="header-link hidden" href="#">
+                <i class="fi fi-rr-bell"/>
+            </a>
+
+            <a class="header-link user-info" href="#" onclick="Main.toggleUserDropdown();">
+                <p:avatar label="#{userSessionBean.firstLetterName}"
+                          styleClass="mr-2" shape="circle"/>
+                <span class="username">#{userSessionBean.userName}</span>
+            </a>
+            <div class="user-info-dropdown" id="userInfoDropdown">
+                <h:form>
+                    <p:commandLink action="#{userSessionBean.doLogout()}" ajax="false" immediate="true">
+                        <i class="fi fi-rr-sign-out-alt text-base"/>
+                        <span class="text-base text-color">Cerrar sesión</span>
+                    </p:commandLink>
+                </h:form>
+            </div>
+
+        </div>
+
+    </header>
+
+</ui:composition>
