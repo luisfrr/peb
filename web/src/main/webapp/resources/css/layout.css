@@ -161,7 +161,7 @@ footer .copyright i {
     box-shadow: var(--card-box-shadow);
 
     position: fixed;
-    top: 4rem;
+    top: var(--topbar-height);
     left: var(--sidebar-width-left);
     z-index: 999;
     transition: left 0.3s ease;

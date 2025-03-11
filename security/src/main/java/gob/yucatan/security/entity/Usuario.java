@@ -41,7 +41,7 @@ public class Usuario implements UserDetails {
     private String email;
 
     @Column(name = "correo_confirmado")
-    private Integer correoConfirmado;
+    private Boolean correoConfirmado;
 
     @OneToMany(cascade=CascadeType.ALL, mappedBy="usuario", fetch = FetchType.EAGER)
     private Set<UsuarioRol> usuarioRolSet;

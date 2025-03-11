@@ -37,7 +37,7 @@ public class CustomAuthenticationManager implements AuthenticationManager {
         if(usuarioOptional.isPresent()) {
             Usuario usuario = usuarioOptional.get();
 
-            if(usuario.getCorreoConfirmado() == 0 || (usuario.getPassword() != null &&
+            if(!usuario.getCorreoConfirmado() || (usuario.getPassword() != null &&
                     !passwordEncoder.matches(presentedPassword, usuario.getPassword())))
                 throw new BadCredentialsException("InvalidCredentials");
 

@@ -8,17 +8,25 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.autoconfigure.domain.EntityScan;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
+import org.springframework.security.crypto.password.PasswordEncoder;
 
 import java.util.List;
 import java.util.TimeZone;
 
-@SpringBootApplication(scanBasePackages = {"gob.yucatan"})
+@SpringBootApplication()
+@ComponentScan(basePackages = "gob.yucatan")
+@EnableJpaRepositories("gob.yucatan")
+@EntityScan("gob.yucatan")
 @RequiredArgsConstructor
 @Slf4j
 public class WebApplication implements CommandLineRunner {
 
     private final IPermisoService permisoService;
     private final IPermisoScannerService permisoScannerService;
+    private final PasswordEncoder passwordEncoder;
 
     public static void main(String[] args) {
         SpringApplication.run(WebApplication.class, args);
@@ -27,7 +35,8 @@ public class WebApplication implements CommandLineRunner {
     @Override
     public void run(String... args) {
         setTimeZone();
-        loadPermisos();
+        //loadPermisos();
+        log.info("owner: {}", passwordEncoder.encode("12345678"));
     }
 
     private void setTimeZone() {

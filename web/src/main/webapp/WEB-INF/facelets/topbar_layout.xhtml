@@ -10,7 +10,8 @@
             <div class="brand">
                 <h:form>
                     <p:commandLink ajax="false" action="#{menuSessionBean.goToHome()}">
-                        <h6 class="app-name uppercase">#{appBean.appName}</h6>
+                        <h6 class="app-name uppercase hidden">#{appBean.appName}</h6>
+                        <p:graphicImage library="img" name="/brand/logo.png" height="40" width="auto" />
                     </p:commandLink>
                 </h:form>
             </div>

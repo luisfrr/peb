@@ -116,7 +116,7 @@ body .ui-inputfield {
     color: var(--text-color);
     background: var(--surface-section);
     padding: .5rem .5rem;
-    border: 1px solid var(--surface-border);
+    border: 1px solid var(--border-component-color);
     outline: 0 none;
     font-size: var(--font-size-base);
     border-radius: var(--border-radius-elements);
@@ -126,11 +126,11 @@ body .ui-inputfield {
 }
 
 body .ui-inputfield.ui-state-hover {
-    border-color: var(--primary-color);
+    border-color: var(--secondary-color);
 }
 
 body .ui-inputfield.ui-state-focus {
-    border-color: var(--primary-dark-color);
+    border-color: var(--secondary-light-color);
     outline: 0 none;
     box-shadow: 0 0 0 .2em var(--highlight-bg);
 }
@@ -276,7 +276,7 @@ body .ui-datatable .ui-datatable-header {
 }
 
 body .ui-datatable thead th {
-    background: var(--surface-header);
+    background: var(--header-component-color);
     color: var(--text-color);
     border-bottom: 1px solid var(--surface-border);
 }
@@ -534,7 +534,7 @@ body .topbar .header-link.user-info .ui-avatar span.ui-avatar-text {
 
 
 body .ui-chkbox .ui-chkbox-box {
-    border: 1px solid var(--surface-border);
+    border: 1px solid var(--border-component-color);
     background: var(--surface-section);
 }
 
@@ -570,7 +570,7 @@ body .ui-menu.ui-menu-dynamic {
 }
 
 body .ui-datepicker .ui-datepicker-title select {
-    border: 1px solid var(--surface-border);
+    border: 1px solid var(--border-component-color);
     padding: .5rem .5rem;
     border-radius: var(--border-radius-elements);
     outline: none;

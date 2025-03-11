@@ -96,7 +96,7 @@ public class UsuarioServiceImpl implements IUsuarioService {
 
         // Se agrega estatus registrado, correo no confirmado y roles
 //        usuario.setEstatus(EstatusUsuario.REGISTRADO);
-        usuario.setCorreoConfirmado(0);
+        usuario.setCorreoConfirmado(false);
         usuario.setUsuarioRolSet(new HashSet<>(usuarioRolList));
         usuario.setContrasenia("");
 
@@ -197,7 +197,7 @@ public class UsuarioServiceImpl implements IUsuarioService {
         // Se modifica el usuario
 //        usuario.setEstatus(EstatusUsuario.ACTIVO);
         usuario.setContrasenia(passwordEncrypted);
-        usuario.setCorreoConfirmado(1);
+        usuario.setCorreoConfirmado(true);
 //        usuario.setVigenciaToken(null);
 //        usuario.setTokenType(null);
 //        usuario.setToken(null);
