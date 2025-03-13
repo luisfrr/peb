@@ -10,8 +10,6 @@
     </parent>
 
     <artifactId>security</artifactId>
-    <groupId>gob.yucatan.security</groupId>
-    <version>0.0.1-SNAPSHOT</version>
     <description>Módulo de seguridad del proyecto</description>
 
     <properties>
@@ -22,7 +20,7 @@
 
     <dependencies>
         <dependency>
-            <groupId>gob.yucatan.utilities</groupId>
+            <groupId>gob.yucatan.peb</groupId>
             <artifactId>utilities</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>

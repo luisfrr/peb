@@ -17,9 +17,9 @@ import java.util.List;
 import java.util.TimeZone;
 
 @SpringBootApplication()
-@ComponentScan(basePackages = "gob.yucatan")
-@EnableJpaRepositories("gob.yucatan")
-@EntityScan("gob.yucatan")
+@ComponentScan(basePackages = "gob.yucatan.peb")
+@EnableJpaRepositories("gob.yucatan.peb")
+@EntityScan("gob.yucatan.peb")
 @RequiredArgsConstructor
 @Slf4j
 public class WebApplication implements CommandLineRunner {

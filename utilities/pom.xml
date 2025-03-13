@@ -10,8 +10,6 @@
     </parent>
 
     <artifactId>utilities</artifactId>
-    <groupId>gob.yucatan.utilities</groupId>
-    <version>0.0.1-SNAPSHOT</version>
     <description>Módulo de utilidades</description>
 
     <properties>

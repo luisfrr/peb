@@ -10,8 +10,6 @@
     </parent>
 
     <artifactId>web</artifactId>
-    <groupId>gob.yucatan.web</groupId>
-    <version>0.0.1-SNAPSHOT</version>
     <name>web</name>
     <description>web</description>
 
@@ -36,17 +34,17 @@
 
     <dependencies>
         <dependency>
-            <groupId>gob.yucatan.core</groupId>
+            <groupId>gob.yucatan.peb</groupId>
             <artifactId>core</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
         <dependency>
-            <groupId>gob.yucatan.utilities</groupId>
+            <groupId>gob.yucatan.peb</groupId>
             <artifactId>utilities</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
         <dependency>
-            <groupId>gob.yucatan.security</groupId>
+            <groupId>gob.yucatan.peb</groupId>
             <artifactId>security</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>

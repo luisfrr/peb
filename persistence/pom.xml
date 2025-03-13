@@ -10,8 +10,6 @@
     </parent>
 
     <artifactId>persistence</artifactId>
-    <groupId>gob.yucatan.persistence</groupId>
-    <version>0.0.1-SNAPSHOT</version>
     <description>Módulo de acceso a datos, entidades y repositorios JPA.</description>
 
     <properties>
