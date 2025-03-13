@@ -1,7 +1,6 @@
 package gob.yucatan.peb.security.service.impl;
 
 import gob.yucatan.peb.security.entity.*;
-import gob.yucatan.security.entity.*;
 import gob.yucatan.peb.security.enums.EstatusPermiso;
 import gob.yucatan.peb.security.repository.IRolPermisoRepository;
 import gob.yucatan.peb.security.repository.IUsuarioPermisoRepository;
