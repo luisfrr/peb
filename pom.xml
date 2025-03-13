@@ -10,7 +10,7 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
 
-    <groupId>gob.yucatan</groupId>
+    <groupId>gob.yucatan.peb</groupId>
     <artifactId>peb</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>peb</name>
@@ -37,7 +37,7 @@
             <dependency>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-dependencies</artifactId>
-                <version>3.4.3</version> <!-- Asegúrate de usar una versión compatible con Java 21 -->
+                <version>3.4.3</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
